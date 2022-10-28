@@ -76,10 +76,9 @@ public class Toggl extends StartHW{
                         "\\\"start\\\":\\\"" + this.startTime + "\\\"," +
                         "\\\"duration\\\":" + elapsedTime.toString() + "," +
                         "\\\"stop\\\":null}\"",
-                "-X", "POST", "https://api.track.toggl.com/api/v9/time_entries",
-                "-i", "\nPAUSE"};
+                "-X", "POST", "https://api.track.toggl.com/api/v9/time_entries", "-i"};
 
-        String output = runCmd(cmd, this.debugMode, this.debugMode);
+        String output = runCmd(cmd, this.debugMode, false);
         if (debugMode) {
             System.out.println(output);
         }
