@@ -12,7 +12,7 @@ public class StartHW {
         String project = args[1];
         String tag = args[2];
         boolean debugMode = false;
-        if (args.length > 4) {
+        if (args.length > 3) {
             debugMode = args[3].equals("true");
         }
 
