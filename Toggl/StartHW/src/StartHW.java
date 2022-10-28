@@ -39,11 +39,7 @@ public class StartHW {
         // capture output
         if (captureResult) {
             BufferedReader reader;
-            if (debugMode) {
-                reader = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
-            } else {
-                reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-            }
+            reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             proc.waitFor();
 
             String line;

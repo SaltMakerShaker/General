@@ -66,6 +66,7 @@ public class Toggl extends StartHW{
         String[] cmd = new String[]{"curl.exe", "-u",  this.apiToken + ":api_token",
                 "-H", "\"Content-Type: application/json\"", "-d",
                 "\"{\\\"created_with\\\":\\\"Start_hw.java\\\"," +
+                        "\\\"duronly\\\":true," +
                         "\\\"pid\\\":" + this.pid + "," +
                         "\\\"tid\\\":null," +
                         "\\\"description\\\":\\\"" + this.entryName + "\\\"," +
@@ -74,7 +75,7 @@ public class Toggl extends StartHW{
                         "\\\"wid\\\":" + this.wid + "," +
                         "\\\"start\\\":\\\"" + this.startTime + "\\\"," +
                         "\\\"duration\\\":" + elapsedTime.toString() + "," +
-                        "\\\"stop\\\":\\\"null\\\"}\"",
+                        "\\\"stop\\\":null}\"",
                 "-X", "POST", "https://api.track.toggl.com/api/v9/time_entries",
                 "-i", "\nPAUSE"};
 
